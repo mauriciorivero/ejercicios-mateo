@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Sueldo Máximo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Plantilla inicial para ejecución de ejercicios de programación</h1>
+    <p>Esta página web contiene los componentes iniciales para leer datos del usuario y mostrar resultados en pantalla de modo que puedan usarse para ejecutar ejercicios de programación.</p>
+    
+    <section>
+        <h2>Problema 7</h2>
+        <p>Pedir un número `N`, introducir `N` sueldos y mostrar el sueldo máximo.</p>
+        
+        <label for="numeroSueldos">Cantidad de sueldos:</label>
+        <input id="numeroSueldos" type="number" placeholder="Ingrese la cantidad de sueldos">
+        <button id="ingresarSueldosBtn">Ingresar Sueldos</button>
+        
+        <p id="resultado"></p> <!-- Contenedor donde se mostrará el resultado -->
+    </section>
+
+    <script>
+        const ingresarSueldosBtn = document.getElementById('ingresarSueldosBtn');
+        const resultado = document.getElementById('resultado');
+
+        ingresarSueldosBtn.addEventListener('click', () => {
+            const numeroSueldos = parseInt(document.getElementById('numeroSueldos').value);
+
+            if (isNaN(numeroSueldos) || numeroSueldos <= 0) {
+                resultado.textContent = "Por favor, ingrese un número válido mayor a 0.";
+                return;
+            }
+
+            let sueldoMax = 0;
+
+            for (let i = 0; i < numeroSueldos; i++) {
+                let sueldo = parseFloat(prompt(`Ingrese el sueldo #${i + 1}:`));
+
+                while (isNaN(sueldo) || sueldo <= 0) {
+                    sueldo = parseFloat(prompt(`Valor inválido. Ingrese el sueldo #${i + 1} nuevamente:`));
+                }
+
+                if (sueldo > sueldoMax) {
+                    sueldoMax = sueldo;
+                }
+            }
+
+            resultado.textContent = `El sueldo máximo ingresado es: $${sueldoMax.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

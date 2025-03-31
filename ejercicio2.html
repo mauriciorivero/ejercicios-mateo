@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Plantilla inicial para ejecución de ejericios de programación</h1>
+    <p>Esta pagina web contiene los componentes inciales para leer datos del usuario y mostrar resultados en pantalla de modo que puedan usarse para ejecutar ejercicios de programación</p>
+    <section>
+        <h2>Problema 2</h2>
+        <p>Leer la edad de una persona e imprimir un mensaje en caso que sea mayor de edad. </p>
+        <input id="edad" type="number" placeholder="Ingrese la edad">
+        <button id="ejecutarBtn1">Verificar</button>
+    </section>
+
+    <script>
+        /*
+            Aquí se escribe el código de JavaScript que se encargará de leer los datos del usuario y mostrar los resultados en pantalla para el primer problema
+        */
+        const verificarEdadBtn = document.getElementById('ejecutarBtn1');
+        const numeroEdad = document.getElementById('edad');
+        verificarEdadBtn.addEventListener('click', () => {
+            const edad = parseInt(numeroEdad.value);
+            //Desde aqui escribiras el código para resolver el problema
+
+            if (edad>=18){       
+                alert("Usted es mayor de edad y tiene "+edad+" años");
+
+            } else {
+            
+                alert ("Usted NO es mayor de edad y tiene "+edad+" años");
+            }
+        });
+    </script>
+</body>
+</html>

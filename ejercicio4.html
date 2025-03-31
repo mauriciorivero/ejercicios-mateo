@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Plantilla inicial para ejecución de ejericios de programación</h1>
+    <p>Esta pagina web contiene los componentes inciales para leer datos del usuario y mostrar resultados en pantalla de modo que puedan usarse para ejecutar ejercicios de programación</p>
+    <section>
+        <h2>Problema 4</h2>
+        <p>Hacer un algoritmo que imprima el nombre de un artículo, clave, precio original y su precio con descuento. El descuento lo hace en base a la clave, si la clave es 01 el descuento es del 10% y si la clave es 02 el descuento es del 20% (solo existen dos claves). </p>
+        <input id="nombreArticulo" type="string" placeholder="Ingrese un articulo">
+        <input id="precioArticulo" type="number" placeholder="Ingrese el precio del articulo">
+        <select id ="claveArticulo"> 
+            <option value="01">01</option>
+            <option value="02">02</option>
+        </select>
+        <button id="ejecutarBtn3">Calcular</button>
+    </section>
+
+    <script>
+        /*
+            Aquí se escribe el código de JavaScript que se encargará de leer los datos del usuario y mostrar los resultados en pantalla para el primer problema
+        */
+        const ejecutarBtn3 = document.getElementById('ejecutarBtn3');
+        ejecutarBtn3.addEventListener('click', () => {
+            const nombreArticulo = document.getElementById('nombreArticulo').value;
+            const precioArticulo = document.getElementById('precioArticulo').value;
+            const claveArticulo = document.getElementById('claveArticulo').value;
+            //Desde aqui escribiras el código para resolver el problema
+
+            if (claveArticulo=="01"){    
+                let precioDescuento=precioArticulo*0.90
+                alert("El articulo " +nombreArticulo+ " con precio $"+precioArticulo+" le queda en $ "+precioDescuento);
+
+            } else if (claveArticulo=="02"){    
+                let precioDescuento=precioArticulo*0.80
+                alert("El articulo " +nombreArticulo+ " con precio $"+precioArticulo+" le queda en $ "+precioDescuento);
+
+            }
+        });
+    </script>
+</body>
+</html>.

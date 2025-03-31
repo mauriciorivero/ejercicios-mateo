@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Plantilla inicial para ejecución de ejericios de programación</h1>
+    <p>Esta pagina web contiene los componentes inciales para leer datos del usuario y mostrar resultados en pantalla de modo que puedan usarse para ejecutar ejercicios de programación</p>
+    <section>
+        <h2>Problema 1</h2>
+        <p>Un proveedor de computadores ofrece descuento del 10%, si cuesta $1.000.000 o más. Determinar cuánto pagará, con IVA incluido (19%), un cliente si la compra cumple con esta condición. </p>
+        <input id="precio" type="number" placeholder="Ingrese el precio del producto">
+        <button id="ejecutarBtn1">Verificar</button>
+    </section>
+
+    <script>
+        /*
+            Aquí se escribe el código de JavaScript que se encargará de leer los datos del usuario y mostrar los resultados en pantalla para el primer problema
+        */
+        const verificarPrecioBtn = document.getElementById('ejecutarBtn1');
+        const numeroPrecio = document.getElementById('precio');
+        verificarPrecioBtn.addEventListener('click', () => {
+            const precio = parseInt(numeroPrecio.value);
+            //Desde aqui escribiras el código para resolver el problema
+            let descuento=0.10;
+            let iva=0.19;
+            let precioFinal;
+
+            if (precio>=1000000){
+                let precioConDescuento = precio*(1-descuento);
+                precioFinal=precioConDescuento*(1+iva);
+
+                alert("el precio total del computador es $ "+precioFinal);
+
+            } else {
+                precioFinal=precio*(1+iva)
+                alert ("el precio total del computador es $ "+ precioFinal);
+            }
+        });
+    </script>
+</body>
+</html>

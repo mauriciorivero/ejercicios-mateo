@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Plantilla inicial para ejecución de ejericios de programación</h1>
+    <p>Esta pagina web contiene los componentes inciales para leer datos del usuario y mostrar resultados en pantalla de modo que puedan usarse para ejecutar ejercicios de programación</p>
+    <section>
+        <h2>Problema 5</h2>
+        <p>Un obrero necesita calcular su salario semanal, el cual se obtiene de la siguiente manera:
+            Si trabaja 40 horas o menos, se le paga a $10.000 la hora
+           
+            Si trabaja más de 40 horas, se le paga $10.000 por cada una de las primeras 40 horas y $15.000 por cada una de las horas extras. </p>
+        <input id="horasTrabajadas" type="number" placeholder="Ingrese las horas trabajadas">
+        <button id="ejecutarBtn1">Verificar</button>
+    </section>
+    <script>
+        /*
+            Aquí se escribe el código de JavaScript que se encargará de leer los datos del usuario y mostrar los resultados en pantalla para el primer problema
+        */
+        const verificarHorasBtn = document.getElementById('ejecutarBtn1');
+        const horasTrabajadasInput = document.getElementById('horasTrabajadas');
+        
+        verificarHorasBtn.addEventListener('click', () => {
+            const horasTrabajadas = parseInt(horasTrabajadasInput.value);
+            
+            //Desde aqui escribiras el código para resolver el problema
+            const precioHorasNormales = 10000;
+            const precioHorasExtra = 15000;
+            let pagoTotal;
+           
+            if (horasTrabajadas <= 40) {    
+                pagoTotal = horasTrabajadas * precioHorasNormales;
+                alert("Tu pago por "+horasTrabajadas+ " horas es: $"+pagoTotal);
+            } else {
+                const pago40Horas = 40 * precioHorasNormales;
+                const horasExtra = horasTrabajadas - 40;
+                const pagoHorasExtra = horasExtra * precioHorasExtra;
+                pagoTotal = pago40Horas + pagoHorasExtra;
+                alert("Tu pago por "+horasTrabajadas+ " horas es: $"+pagoTotal);
+            }
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>
